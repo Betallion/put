@@ -1,1 +1,1 @@
-put
+Politechnika Poznańska
