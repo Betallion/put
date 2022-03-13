@@ -19,7 +19,7 @@ datadir = os.path.dirname(os.path.abspath(__file__)) + '/data/'
 timedir = os.path.dirname(os.path.abspath(__file__)) + '/times/'
 
 for i in algorithms:
-    timename = timedir + i + '_times.txt'
+    timename = timedir + i[:-3] + '_times.txt'
     timefile = open(timename, 'w')
     for j in dataname:
         for k in testnum:
@@ -29,7 +29,7 @@ for i in algorithms:
             subprocess.run(cmdname, shell=True)
             elapsed = j + ' ' + str(k) + ' ' + str(time.time() - start) + '\n'
             timefile.write(elapsed)
-            print(i + ' ' + j + ' ' + str(k) + ' - test complete')
+            print(i[:-3] + ' ' + j + ' ' + str(k) + ' - test complete')
     timefile.close()
 
 #generate charts
