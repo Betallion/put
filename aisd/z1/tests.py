@@ -11,7 +11,7 @@ if newdata == 'y':
     for num in testnum:
 
         cmdname = 'python ' + os.path.dirname(os.path.abspath(__file__)) + '/numgen.py ' + str(num)
-        subprocess.run(cmdname)
+        subprocess.run(cmdname, shell=True)
 algdir = os.path.dirname(os.path.abspath(__file__)) + '/algorithms/'
 for alg in os.listdir(algdir):
     algorithms.append(alg)
@@ -26,7 +26,7 @@ for i in algorithms:
             datafile = datadir + j + '_' + str(k) + '.txt'
             cmdname = 'python ' + algdir + i + ' ' + datafile
             start = time.time()
-            subprocess.run(cmdname)
+            subprocess.run(cmdname, shell=True)
             elapsed = j + ' ' + str(k) + ' ' + str(time.time() - start) + '\n'
             timefile.write(elapsed)
             print(i + ' ' + j + ' ' + str(k) + ' - test complete')
