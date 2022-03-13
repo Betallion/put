@@ -1,11 +1,13 @@
 import random
 import os
-n = int(input())
+import sys
+
+n = int(sys.argv[1])
 values = []
 for i in range(n):
     values.append(random.randint(0, n))
 
-dir = os.path.dirname(os.path.abspath(__file__)) + '/'
+dir = os.path.dirname(os.path.abspath(__file__)) + '/data/'
 uniform_name = dir + 'uniform_' + str(n) + '.txt'
 scatter_name = dir + 'scatter_' + str(n) + '.txt'
 right_name = dir + 'right_' + str(n) + '.txt'
