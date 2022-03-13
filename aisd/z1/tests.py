@@ -9,7 +9,8 @@ dataname = ['right', 'left', 'scatter', 'center', 'uniform']
 newdata = input('generate new data? (y/n):')
 if newdata == 'y':
     for num in testnum:
-        cmdname = 'python ./numgen.py ' + str(num)
+
+        cmdname = 'python ' + os.path.dirname(os.path.abspath(__file__)) + '/numgen.py ' + str(num)
         subprocess.run(cmdname)
 algdir = os.path.dirname(os.path.abspath(__file__)) + '/algorithms/'
 for alg in os.listdir(algdir):
