@@ -8,7 +8,7 @@ for alg in os.listdir(algdir):
     algorithms.append(alg)
 for tim in os.listdir(timedir):
     timeval = []
-    timefile = open(tim, 'r')
+    timefile = open(timedir+tim, 'r')
     for line in timefile:
         timeval.append(line)
     begin = 0
@@ -26,3 +26,4 @@ for tim in os.listdir(timedir):
             ax.set_title(val[0].upper())
             ax.legend()
             fig.show()
+            input()
