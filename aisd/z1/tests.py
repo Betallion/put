@@ -2,9 +2,10 @@ import os
 import time
 import subprocess
 
+
 algorithms = []
 testdata = []
-testnum = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
+testnum = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
 dataname = ['right', 'left', 'scatter', 'center', 'uniform']
 newdata = input('generate new data? (y/n):')
 if newdata == 'y':
@@ -18,15 +19,17 @@ datadir = os.path.dirname(os.path.abspath(__file__)) + '/data/'
 timedir = os.path.dirname(os.path.abspath(__file__)) + '/times/'
 
 for i in algorithms:
-    timename = timedir + i[:-3] + '_times.txt'
-    timefile = open(timename, 'w')
-    for j in dataname:
-        for k in testnum:
-            datafile = datadir + j + '_' + str(k) + '.txt'
-            cmdname = 'python ' + algdir + i + ' ' + datafile
-            start = time.time()
-            subprocess.run(cmdname, shell=True)
-            elapsed = j + ' ' + str(k) + ' ' + str(time.time() - start) + '\n'
-            timefile.write(elapsed)
-            print(i[:-3] + ' ' + j + ' ' + str(k) + ' - test complete')
-    timefile.close()
+    algcheck = input(i + ' - test this algorithm? (y/n) ')
+    if algcheck == 'y':
+        timename = timedir + i[:-3] + '_times.txt'
+        timefile = open(timename, 'w')
+        for j in dataname:
+            for k in testnum:
+                datafile = datadir + j + '_' + str(k) + '.txt'
+                cmdname = 'python ' + algdir + i + ' ' + datafile
+                start = time.time()
+                subprocess.run(cmdname, shell=True)
+                elapsed = j + ' ' + str(k) + ' ' + str(time.time() - start) + '\n'
+                timefile.write(elapsed)
+                print(i[:-3] + ' ' + j + ' ' + str(k) + ' - test complete')
+        timefile.close()
