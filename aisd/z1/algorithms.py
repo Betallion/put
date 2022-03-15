@@ -1,5 +1,4 @@
 import random
-import sys
 
 def makeHeap (listToSort, length, heapIndex) :
 
@@ -282,11 +281,9 @@ while True:
         data = heapSort(data)
         break
     elif algNumber == '5':
-        sys.setrecursionlimit(10000)
         data = quickSortLeft(data)
         break
     elif algNumber == '6':
-        sys.setrecursionlimit(10000)
         data = quickSortRandom(data)
         break
     else:
