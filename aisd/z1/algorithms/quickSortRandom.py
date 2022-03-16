@@ -1,6 +1,6 @@
 import sys
 import random
-import sys
+
 
 values = []
 with open(sys.argv[1]) as file:

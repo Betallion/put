@@ -2,7 +2,7 @@ from tkinter import N, Y
 import matplotlib.pyplot as plt
 import os
 
-sortnames = {'selectionSort': 'Sortowanie przez wybieranie', 'insertionSort': 'Sortowanie przez wstawianie', 'shellSort': 'Sortowanie Shella', 'heapSort': 'Sortowanie przez kopcowanie', 'quickSortLeft': 'Sortowanie szybkie (lewy)', 'quickSortRandom': 'Sortowanie szybkie (losowy)'}
+sortnames = {'selectionSort': 'Sortowanie przez wybieranie', 'insertionSort': 'Sortowanie przez wstawianie', 'shellSort': 'Sortowanie Shella', 'heapSort': 'Sortowanie przez kopcowanie', 'quickSortLeft': 'Sortowanie szybkie (lewy)', 'quickSortRandom': 'Sortowanie szybkie (losowy)', 'quickRandom': 'Sortowanie szybkie (losowy)', 'quickLeft': 'Sortowanie szybkie (lewy)'}
 datanames = {'right': 'dane rosnące', 'left': 'dane malejące', 'scatter': 'dane losowe', 'center': 'dane A-kształtne', 'uniform': 'dane stałe'}
 algorithms = []
 timedir = os.path.dirname(os.path.abspath(__file__)) + '/times/'

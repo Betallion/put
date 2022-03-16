@@ -5,7 +5,7 @@ import subprocess
 
 algorithms = []
 testdata = []
-testnum = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+testnum = [2500, 5000, 7500, 10000, 12500, 15000, 17500, 20000, 22500, 25000]
 dataname = ['right', 'left', 'scatter', 'center', 'uniform']
 newdata = input('generate new data? (y/n):')
 if newdata == 'y':

@@ -175,6 +175,29 @@ def shellSort (listToSort) :
 
     return listToSort
 
+
+def quickRandom(lst):
+    if len(lst) <= 1:
+        return lst
+    else:
+        p = random.choice(lst)
+        low  = [x for x in lst if x <  p]
+        med  = [x for x in lst if x == p]
+        high = [x for x in lst if x >  p]
+        return quickRandom(low) + med + quickRandom(high)
+def quickLeft(lst):
+    if len(lst) <= 1:
+        return lst
+    else:
+        p, *rest = lst
+        low  = [x for x in rest if x <= p]
+        high = [x for x in rest if x >  p]
+        return quickLeft(low) + [p] + quickLeft(high)
+
+
+
+
+
 def selectionSort(listToSort):
     n = len(listToSort)
     for i in range(n):
