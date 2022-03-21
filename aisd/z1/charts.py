@@ -18,7 +18,7 @@ for tim in os.listdir(timedir):
         for line in timefile:
             timeval.append(line)
         begin = 0
-        yavg = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        figa, axa = plt.subplots()
         for i in range(5):
             xdata = []
             ydata = []
@@ -26,21 +26,21 @@ for tim in os.listdir(timedir):
                 val = timeval[j].split()
                 xdata.append(int(val[1]))
                 ydata.append(float(val[2]))
-                yavg[j - i * 10] += float(val[2])
                 #print(xdata, ydata)
             fig, ax = plt.subplots()
             ax.plot(xdata, ydata)
+            axalabel = datanames[val[0]]
+            axa.plot(xdata, ydata, label=axalabel)
             ax.set_xlabel('Liczba elementów')
             ax.set_ylabel('Czas [s]')
             ax.set_title(sortnames[tim.split('_')[0]] + ' - ' + datanames[val[0]])
             chartfile = chartdir + tim.split('_')[0] + '/' + tim.split('_')[0] + '_' + val[0] + '.png'
             fig.savefig(chartfile)
             begin += 10
-        yavg = [val/5 for val in yavg]
-        fig, ax = plt.subplots()
-        ax.plot(xdata, yavg)
-        ax.set_xlabel('Liczba elementów')
-        ax.set_ylabel('Czas [s]')
-        ax.set_title(sortnames[tim.split('_')[0]] + ' - dane uśrednione')
-        chartfile = chartdir + tim.split('_')[0] + '/' + tim.split('_')[0] + '_avg.png'
-        fig.savefig(chartfile)
+
+        axa.set_xlabel('Liczba elementów')
+        axa.set_ylabel('Czas [s]')
+        axa.set_title(sortnames[tim.split('_')[0]])
+        axa.legend()
+        chartfile = chartdir + tim.split('_')[0] + '/' + tim.split('_')[0] + '_all.png'
+        figa.savefig(chartfile)
