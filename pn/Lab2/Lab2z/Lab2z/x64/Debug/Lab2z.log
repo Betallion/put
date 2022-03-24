@@ -1,0 +1,14 @@
+﻿  Source.cpp
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(21,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(22,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(33,29): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(34,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(40,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(61,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(114,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(359,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(360,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(371,29): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(373,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab2\Lab2z\Lab2z\Source.cpp(391,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Lab2z.vcxproj -> C:\Users\Kacper\git\put\pn\Lab2\Lab2z\x64\Debug\Lab2z.exe
