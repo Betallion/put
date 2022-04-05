@@ -1,9 +1,8 @@
 import os
-import time
 import subprocess
 
 programs = []
-testnum = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
+testnum = [2000, 4000, 6000, 8000, 10000, 12000, 14000, 16000, 18000, 20000]
 newdata = input('generate new data? (y/n):')
 if newdata == 'y':
     for num in testnum:

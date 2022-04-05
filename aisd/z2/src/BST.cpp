@@ -208,7 +208,7 @@ void rotateLeft(BSTNode* &root, BSTNode* A)
 	BSTNode* B = A->right;
 	BSTNode* p = A->up;
 
-	if (B != nullptr)// czy istnieje prawy syn A
+	if (B != nullptr)// czy istnieje prawe dziecko A
 	{
 		A->right = B->left;
 		if (A->right != nullptr)
@@ -324,19 +324,14 @@ int main(int argc, char* argv[])
 {
 	BSTNode* root = nullptr;
 
-	fstream create;
-	fstream maxvalue;
-	fstream inorder;
-	fstream balance;
-
-	
-	cout << argc << endl;
-	cout << argv[1] << endl;
-
 	//tworzenie drzewa
 	if (argc > 1)
 	{
 		int length = 0;
+		fstream create;
+		fstream maxvalue;
+		fstream inorder;
+		fstream balance;
 		fstream data;
 		string file = argv[1];
 		data.open(file.c_str(), fstream::in);
@@ -346,11 +341,9 @@ int main(int argc, char* argv[])
 		{
 			data >> num;
 			length++;
-			//cout << num << endl;
 			insertBST(root, num);
 		}
 		auto stop = high_resolution_clock::now();
-		//auto durationCreate = duration_cast<seconds>(stop - start);
 		duration<double> durationCreate = stop - start;
 		data.close();
 
@@ -358,33 +351,24 @@ int main(int argc, char* argv[])
 		start = high_resolution_clock::now();
 		maxValue(root);
 		stop = high_resolution_clock::now();
-		//auto durationMax = duration_cast<seconds>(stop - start);
 		duration<double> durationMax = stop - start;
 
 		//wypisanie in order
 		start = high_resolution_clock::now();
 		printInOrder(root);
 		stop = high_resolution_clock::now();
-		//auto durationInorder = duration_cast<seconds>(stop - start);
 		duration<double> durationInorder = stop - start;
 
 		//bst - rownowazenie
 		start = high_resolution_clock::now();
 		balanceBST(root);
 		stop = high_resolution_clock::now();
-		//auto durationBalance = duration_cast<seconds>(stop - start);
 		duration<double> durationBalance = stop - start;
 
-		cout << durationCreate.count() << endl;
-		cout << durationMax.count() << endl;
-		cout << durationInorder.count() << endl;
-		cout << durationBalance.count() << endl;
 		double ddc = durationCreate.count();
 		double ddm = durationMax.count();
 		double ddi = durationInorder.count();
 		double ddb = durationBalance.count();
-		cout << ddc << endl;
-
 
 		path dir = current_path();
 		string dirstr = dir.string();
@@ -395,19 +379,20 @@ int main(int argc, char* argv[])
 		string balanceName = dirstr + "/times/bst_balance.txt";
 
 		create.open(createName.c_str(), fstream::out | fstream::app);
-		create << std::fixed << std::setprecision(8) << ddc << endl;
+		//create << std::fixed << std::setprecision(8) << ddc << endl;
+		create << ddc << endl;
 		create.close();
 
 		maxvalue.open(maxName.c_str(), fstream::out | fstream::app);
-		maxvalue << std::fixed << std::setprecision(8) << ddm << endl;
+		maxvalue << std::fixed << std::setprecision(6) << ddm << endl;
 		maxvalue.close();
 
 		inorder.open(inorderName.c_str(), fstream::out | fstream::app);
-		inorder << std::fixed << std::setprecision(8) << ddi << endl;
+		inorder << ddi << endl;
 		inorder.close();
 
 		balance.open(balanceName.c_str(), fstream::out | fstream::app);
-		balance << std::fixed << std::setprecision(8) << ddb << endl;
+		balance << std::fixed << std::setprecision(5) << ddb << endl;
 		balance.close();
 
 	}
