@@ -527,36 +527,6 @@ int main(int argc, char* argv[])
 {
     AVLNode* root = nullptr;
 
-/*
-	const int n = 7;
-	int num[n] = { 7, 6, 3, 15, 20, 25, 30};
-
-	for (int i = 0; i < n; i++) // insertowanie
-	{
-	    AVLNode* endNode = nullptr; // zmienna trzymająca adres insertowanego node'a
-	    
-		insertAVL (root, NULL, num[i], endNode);
-		
-    	bfCheck (endNode); // w zasadzie sortowanie bf
-    	
-    	pullRootUp(root);
-	}
-    
-    removeAVL(root, findAVL(root, 15)); // usuń 15
-    
-	pullRootUp(root);
-	
-	cout << "Bf: ";
-    printBfPreOrder(root);
-    
-	cout << "\nHeight: ";
-	
-    printHeightPreOrder(root);
-    
-	cout << "\nData: ";
-   
-    printPreOrder(root);
-*/
 
 
 
@@ -624,5 +594,37 @@ int main(int argc, char* argv[])
 		inorder.close();
 
 	}
+
+	
+	const int n = 7;
+	int num[n] = { 7, 6, 3, 15, 20, 25, 30};
+
+	for (int i = 0; i < n; i++) // insertowanie
+	{
+	    AVLNode* endNode = nullptr; // zmienna trzymająca adres insertowanego node'a
+	    
+		insertAVL (root, NULL, num[i], endNode);
+		
+    	bfCheck (endNode); // w zasadzie sortowanie bf
+    	
+    	pullRootUp(root);
+	}
+    
+    removeAVL(root, findAVL(root, 15)); // usuń 15
+    
+	pullRootUp(root);
+	
+	cout << "Bf: ";
+    printBfPreOrder(root);
+    
+	cout << "\nHeight: ";
+	
+    printHeightPreOrder(root);
+    
+	cout << "\nData: ";
+   
+    printPreOrder(root);
+
+
 
 }

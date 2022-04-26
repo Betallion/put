@@ -1,0 +1,5 @@
+﻿  Source.cpp
+C:\Users\Kacper\git\put\pn\Lab3\Lab3z\Lab3z\Source.cpp(32,16): warning C4101: 'c': unreferenced local variable
+C:\Users\Kacper\git\put\pn\Lab3\Lab3z\Lab3z\Source.cpp(88,16): warning C4101: 'c': unreferenced local variable
+C:\Users\Kacper\git\put\pn\Lab3\Lab3z\Lab3z\Source.cpp(160,16): warning C4101: 'c': unreferenced local variable
+  Lab3z.vcxproj -> C:\Users\Kacper\git\put\pn\Lab3\Lab3z\x64\Debug\Lab3z.exe

@@ -399,6 +399,22 @@ int main(int argc, char* argv[])
 
 
 	
+	const int n = 7;
+	int num[n] = {7, 6, 3, 15, 20, 25, 35};
+
+	for (int i = 0; i < n; i++)
+	{
+		insertBST(root, num[i]);
+
+	}
+    
+	cout << "Pre order" << endl;
+	printPreOrder(root);
+	cout << endl << "Max" << endl;
+
+	printMaxValue(root);
+	cout << endl;
+	
 
 	return 0;
 }

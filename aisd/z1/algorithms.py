@@ -1,5 +1,7 @@
 import random
 
+
+
 def makeHeap (listToSort, length, heapIndex) :
 
     largest = heapIndex
@@ -31,6 +33,11 @@ def heapSort (listToSort) :
         makeHeap (listInstance, i, 0)
 
     return listInstance
+
+
+
+
+
 
 def partitionRandom (listToSort, startIndex, endIndex) :
 
@@ -121,6 +128,11 @@ def quickSortLeft (listToSort, startIndex = 0, endIndex = -1) :
 
     return listToSort
 
+
+
+
+
+
 def shellSort (listToSort) :
 
     length = len (listToSort)
@@ -143,6 +155,12 @@ def shellSort (listToSort) :
         gap = gap // 2
 
     return listToSort
+
+
+
+
+
+
 
 
 

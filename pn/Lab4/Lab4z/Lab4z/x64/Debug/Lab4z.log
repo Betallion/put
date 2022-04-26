@@ -1,0 +1,9 @@
+﻿  Source.cpp
+C:\Users\Kacper\git\put\pn\Lab4\Lab4z\Lab4z\Source.cpp(10,29): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\Kacper\git\put\pn\Lab4\Lab4z\Lab4z\Source.cpp(11,12): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab4\Lab4z\Lab4z\Source.cpp(17,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab4\Lab4z\Lab4z\Source.cpp(38,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab4\Lab4z\Lab4z\Source.cpp(51,26): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab4\Lab4z\Lab4z\Source.cpp(88,11): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab4\Lab4z\Lab4z\Source.cpp(89,14): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  Lab4z.vcxproj -> C:\Users\Kacper\git\put\pn\Lab4\Lab4z\x64\Debug\Lab4z.exe
