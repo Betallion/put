@@ -1,3 +1,6 @@
+import sys
+
+
 def am_to_al(matrix):
     size = len(matrix)
     adjacencylist = []
@@ -13,20 +16,54 @@ def am_to_al(matrix):
 #eulerian cycle algorithm
 
 def remove_edge(adjlist, x, y):
-    for i in range(len(x)):
-        if adjlist[x][i] == y:
-            adjlist[x].pop(i)
-    for i in range(len(y)):
-        if adjlist[y][i] == x:
-            adjlist[y].pop(i)
+    adjlist[x].remove(y)
+    adjlist[y].remove(x)
 
-def dfs_euler(adjlist, start, visited, result):
+def add_edge(adjlist, x, y):
+    adjlist[x].append(y)
+    adjlist[y].append(x)
+
+def bridge(adjlist, x, y):
+    size = len(adjlist)
+    nx = 0
+    ny = 0
+    remove_edge(adjlist, x, y)
+    visited = [False] * size
+    nx = dfs(adjlist, x, visited)
+    add_edge(adjlist, x, y)
+    visited = [False] * size
+    ny = dfs(adjlist, x, visited)
+    if nx == ny:
+        return True
+    else:
+        return False
+
+def dfs(adjlist, start, visited):
+    visited[start] = True
+    n = 0
+    for i in adjlist[start]:
+        if visited[i] == False:
+            n += dfs(adjlist, i, visited)
+    return n
+
+
+
+def euler(adjlist, start, visited, result):
     visited.append(start)
-    for i in range(len(adjlist[start])):
-        if adjlist[start][i] not in visited:
-            remove_edge(start, adjlist[start][i])
-            dfs_euler(adjlist, adjlist[start[i]], visited, result)
+    #print(start)
     result.append(start)
+    if len(adjlist[start]) == 0:
+        return
+    if len(adjlist[start]) == 1:
+        v = adjlist[start][0]
+        remove_edge(adjlist, start, v)
+        euler(adjlist, v, visited, result)
+        return
+    for i in adjlist[start]:
+        if bridge(adjlist, start, i) == True:
+            remove_edge(adjlist, start, i)
+            euler(adjlist, i, visited, result)
+            return
 
 def eulerian_cycle(adjlist):
     deg = [0] * len(adjlist)
@@ -36,10 +73,12 @@ def eulerian_cycle(adjlist):
             deg[adjlist[i][j]] += 1
     for i in deg:
         if i % 2 != 0:
+            print('nie ma cyklu')
             return
     visited = []
     result = []
-    dfs_euler(adjlist, 0, visited, result)
+    euler(adjlist, 0, visited, result)
+    print(visited)
     print(result)
     return result
 
@@ -49,11 +88,18 @@ def eulerian_cycle(adjlist):
 
 
 
+#num = sys.argv[1]
 
 #read adjacency matrix
-
+sys.setrecursionlimit(6000)
 matrix = []
-f = open("plik.txt", "r")
+f = open("/home/kacper/git/put/aisd/z4/data/data_100_0.7.txt", "r")
 for line in f:
     temp = [int(x) for x in line.split()]
     matrix.append(temp)
+
+adjlist = am_to_al(matrix)
+#print(adjlist)
+#print(len(adjlist))
+
+res = eulerian_cycle(adjlist)

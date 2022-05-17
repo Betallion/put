@@ -6,8 +6,8 @@ timedir = os.path.dirname(os.path.abspath(__file__)) + '/times/'
 chartdir = os.path.dirname(os.path.abspath(__file__)) + '/charts/'
 testnum = [100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]
 algorithms = ['bfs', 'dfs', 'bfssort', 'dfssort']
-algorithmNames = {'bfs': 'Przeglądanie wszerz', 'dfs': 'Przeglądanie w głąb', 'bfssort': 'Sortowanie topologiczne wszerz', 'dfssort': 'Sortowanie topologiczne w gląb'}
-types = ['am', 'al', 'gel']
+algorithmNames = {'bfs': 'Przeglądanie wszerz', 'dfs': 'Przeglądanie w głąb', 'bfssort': 'Sortowanie topologiczne wszerz', 'dfssort': 'Sortowanie topologiczne w głąb'}
+types = ['am', 'al']
 
 for i in algorithms:
     fig, ax = plt.subplots()
@@ -18,11 +18,12 @@ for i in algorithms:
         for k in times:
             timeval.append(k)
         ydata = []
-        for time in times:
+        for time in timeval:
             val = time.split()
-            ydata.append(float(times[1]))
-        label = j
-        ax.plot(testnum, times, label=label)
+            yval = float(val[1])
+            ydata.append(yval)
+        label = j.upper()
+        ax.plot(testnum, ydata, label=label)
     ax.set_xlabel('Liczba elementów')
     ax.set_ylabel('Czas [s]')
     title = algorithmNames[i]
