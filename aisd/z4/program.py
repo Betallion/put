@@ -78,8 +78,7 @@ def eulerian_cycle(adjlist):
     visited = []
     result = []
     euler(adjlist, 0, visited, result)
-    print(visited)
-    print(result)
+
     return result
 
 
@@ -88,12 +87,12 @@ def eulerian_cycle(adjlist):
 
 
 
-#num = sys.argv[1]
+num = sys.argv[1]
 
 #read adjacency matrix
-sys.setrecursionlimit(6000)
+sys.setrecursionlimit(10000)
 matrix = []
-f = open("/home/kacper/git/put/aisd/z4/data/data_100_0.7.txt", "r")
+f = open(num)
 for line in f:
     temp = [int(x) for x in line.split()]
     matrix.append(temp)
@@ -103,3 +102,4 @@ adjlist = am_to_al(matrix)
 #print(len(adjlist))
 
 res = eulerian_cycle(adjlist)
+print(num, 'done')

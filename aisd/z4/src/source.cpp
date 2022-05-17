@@ -10,19 +10,23 @@ using namespace std;
 using namespace std::chrono;
 using namespace std::filesystem;
 
-vector<vector<int>> am_to_al(vector<vector<int>> &matrix)
+vector<vector<int>> am_to_al(vector<vector<int>> &matrix, int size)
 {
-    int size = matrix.size();
     vector<vector<int>> adjacencylist;
-    for (int i = 0; i < size; i++)
+
+    for (int i = 0; i < matrix.size(); i++)
     {
-        for (int j = 0; j < size; j++)
+        
+        vector<int> temp;
+        for (int j = 0; j < matrix[i].size(); j++)
         {
             if (matrix[i][j] == 1)
             {
-                adjacencylist[i].push_back(j);
+                //cout << j << " ";
+                temp.push_back(j);
             }
         }
+        adjacencylist.push_back(temp);
     }
     return adjacencylist;
 }
@@ -146,38 +150,61 @@ vector<int> eulerian_cycle(vector<vector<int>> &adjlist)
 
 int main(int argc, char* argv[])
 {
-    string f = argv[1];
-    string nas = argv[2];
-    string num = argv[3];
+    string f = "/home/kacper/git/put/aisd/z4/data/data_100_0.3.txt";//argv[1];
+    string nas = "0.3";//argv[2];
+    string num = "100";//argv[3];
+
+    int size = stoi(num);
+    //cout << f << nas << num << size << endl;
     ifstream file(f.c_str());
     string line;
     vector<vector<int>> matrix;
-    while(getline(file, line))
+    int n;
+    if (file.is_open())
     {
         vector<int> row;
-        for (int i : line)
+        for (int i = 0; i < size; i++)
         {
-            if (i != ' ')
+            int t0;
+            for (int j = 0; j < size; j++)
             {
-                row.push_back(i);
+                file >> t0;
+                row.push_back(t0);
             }
         }
         matrix.push_back(row);
     }
-    vector<vector<int>> adjlist = am_to_al(matrix);
+    
 
+    
+
+    vector<vector<int>> adjlist = am_to_al(matrix, size);
+
+    for (int i = 0; i < adjlist.size(); i++)
+    {
+        for (int j = 0; j < adjlist[i].size(); j++)
+        {
+            //cout << adjlist[i][j] << ' ';
+        }
+        //cout << endl << endl;
+    }
+
+    
+    /*
     auto start = high_resolution_clock::now();
-    vector<int> result = eulerian_cycle(adjlist);
+    //vector<int> result = eulerian_cycle(adjlist);
     auto stop = high_resolution_clock::now();
 	duration<double> duration = stop - start;
     double dd = duration.count();
     path dir = current_path();
 	string dirstr = dir.string();
 	string filename = dirstr + "/times/" + nas + "_euler_times.txt";
+    cout << dd << endl << filename << endl;
     fstream dur;
     dur.open(filename.c_str(), fstream::out | fstream::app);
 	//create << std::fixed << std::setprecision(8) << ddc << endl;
 	dur << num << dd << endl;
 	dur.close();
+    */
     return 0;
 }
