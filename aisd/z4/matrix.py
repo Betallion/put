@@ -83,7 +83,7 @@ while odd:
     #print(odd)
     print(len(odd))
     print(len(even))
-print('git')
+#print('git')
 '''
 
 while size > 0:    
@@ -111,6 +111,11 @@ while size > 0:
                 values[y][x] = 1
                 size -= 1
 '''
+
+for i in range(n):
+    for j in range(n):
+        print(values[i][j], end=' ')
+    print('\n')
 
 dir = os.path.dirname(os.path.abspath(__file__)) + '/data/'
 data_name = dir + 'data_' + str(n) + '_' + str(nas) + '.txt'

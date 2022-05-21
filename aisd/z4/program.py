@@ -25,18 +25,18 @@ def add_edge(adjlist, x, y):
 
 def bridge(adjlist, x, y):
     size = len(adjlist)
-    nx = 0
-    ny = 0
+    removed = 0
+    added = 0
     remove_edge(adjlist, x, y)
     visited = [False] * size
-    nx = dfs(adjlist, x, visited)
+    removed = dfs(adjlist, x, visited)
     add_edge(adjlist, x, y)
     visited = [False] * size
-    ny = dfs(adjlist, x, visited)
-    if nx == ny:
-        return True
-    else:
+    added = dfs(adjlist, x, visited)
+    if removed == added:
         return False
+    else:
+        return True
 
 def dfs(adjlist, start, visited):
     visited[start] = True
@@ -60,7 +60,7 @@ def euler(adjlist, start, visited, result):
         euler(adjlist, v, visited, result)
         return
     for i in adjlist[start]:
-        if bridge(adjlist, start, i) == True:
+        if bridge(adjlist, start, i) == False:
             remove_edge(adjlist, start, i)
             euler(adjlist, i, visited, result)
             return
@@ -87,10 +87,16 @@ def eulerian_cycle(adjlist):
 
 
 
-num = sys.argv[1]
+
+
+
+
+
+#num = sys.argv[1]
+num = "C:\\Users\\Kacper\\git\\put\\aisd\\z4\\data\\data_100_0.7.txt"
 
 #read adjacency matrix
-sys.setrecursionlimit(10000)
+
 matrix = []
 f = open(num)
 for line in f:
@@ -100,6 +106,7 @@ for line in f:
 adjlist = am_to_al(matrix)
 #print(adjlist)
 #print(len(adjlist))
-
+sys.setrecursionlimit(2000)
 res = eulerian_cycle(adjlist)
-print(num, 'done')
+print(res)
+#print(num, 'done')

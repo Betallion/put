@@ -1,6 +1,6 @@
-%%% Jako pierwsz¹ klauzulê (nie komentarz!) nale¿y zdefiniowaæ swoje dane     %%%
-%%% w postaci faktu: student(imiê, nazwisko, numer_indeksu, numer_grupy_lab). %%%
-%%% Przyk³adowo:  student(jan,nowak_jeziorañski,150000,2).                    %%%
+%%% Jako pierwszÄ… klauzulÄ™ (nie komentarz!) naleÅ¼y zdefiniowaÄ‡ swoje dane     %%%
+%%% w postaci faktu: student(imiÄ™, nazwisko, numer_indeksu, numer_grupy_lab). %%%
+%%% PrzykÅ‚adowo:  student(jan,nowak_jezioraÅ„ski,150000,2).                    %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 student(kacper,leporowski,151910,8).
 
@@ -8,7 +8,7 @@ student(kacper,leporowski,151910,8).
 poziomy(odcinek(punkt(X1,Y),punkt(X2,Y))).
 pionowy(odcinek(punkt(X,Y1),punkt(X,Y2))).
 
-regularny(prostok¹t(punkt(X1,Y1),punkt(X2,Y2),punkt(X3,Y3),punkt(X4,Y4))) :- X1=X4, X2=X3, Y1=Y2, Y3=Y4.
+regularny(prostokÄ…t(punkt(X1,Y1),punkt(X2,Y2),punkt(X3,Y3),punkt(X4,Y4))) :- X1=X4, X2=X3, Y1=Y2, Y3=Y4.
 
 
 safe(state(F,W,G,C)) :- F=G.

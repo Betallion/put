@@ -1,48 +1,48 @@
-%%% Jako pierwszπ klauzulÍ (nie komentarz!) naleøy zdefiniowaÊ swoje dane     %%%
-%%% w postaci faktu: student(imiÍ, nazwisko, numer_indeksu, numer_grupy_lab). %%%
-%%% Przyk≥adowo:  student(jan,nowak_jezioraÒski,150000,2).                    %%%
+%%% Jako pierwszƒÖ klauzulƒô (nie komentarz!) nale≈ºy zdefiniowaƒá swoje dane     %%%
+%%% w postaci faktu: student(imiƒô, nazwisko, numer_indeksu, numer_grupy_lab). %%%
+%%% Przyk≈Çadowo:  student(jan,nowak_jeziora≈Ñski,150000,2).                    %%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 student(kacper, leporowski, 151910, 8).
-next(úwinoujúcie,ko≥obrzeg).
-next(úwinoujúcie, szczecin).
-next(ko≥obrzeg,ustka).
-next(ustka, gdaÒsk).
-next(gdaÒsk,toruÒ).
-next(gdaÒsk,olsztyn).
-next(olsztyn,toruÒ).
-next(olsztyn,bia≥ystok).
+next(≈õwinouj≈õcie,ko≈Çobrzeg).
+next(≈õwinouj≈õcie, szczecin).
+next(ko≈Çobrzeg,ustka).
+next(ustka, gda≈Ñsk).
+next(gda≈Ñsk,toru≈Ñ).
+next(gda≈Ñsk,olsztyn).
+next(olsztyn,toru≈Ñ).
+next(olsztyn,bia≈Çystok).
 next(szczecin,bydgoszcz).
-next(szczecin, gorzÛw-wlkp).
-next(bydgoszcz,toruÒ).
-next(bydgoszcz,poznaÒ).
-next(poznaÒ,toruÒ).
-next(gorzÛw-wlkp,poznaÒ).
-next(gorzÛw-wlkp,zielona-gÛra).
-next(zielona-gÛra,poznaÒ).
-next(zielona-gÛra,wroc≥aw).
-next(toruÒ,≥Ûdü).
-next(toruÒ,warszawa).
-next(bia≥ystok, warszawa).
-next(bia≥ystok,lublin).
-next(poznaÒ,≥Ûdü).
+next(szczecin, gorz√≥w-wlkp).
+next(bydgoszcz,toru≈Ñ).
+next(bydgoszcz,pozna≈Ñ).
+next(pozna≈Ñ,toru≈Ñ).
+next(gorz√≥w-wlkp,pozna≈Ñ).
+next(gorz√≥w-wlkp,zielona-g√≥ra).
+next(zielona-g√≥ra,pozna≈Ñ).
+next(zielona-g√≥ra,wroc≈Çaw).
+next(toru≈Ñ,≈Ç√≥d≈∫).
+next(toru≈Ñ,warszawa).
+next(bia≈Çystok, warszawa).
+next(bia≈Çystok,lublin).
+next(pozna≈Ñ,≈Ç√≥d≈∫).
 next(warszawa,radom).
-next(warszawa,≥Ûdü).
+next(warszawa,≈Ç√≥d≈∫).
 next(radom,lublin).
 next(radom,kielce).
-next(wroc≥aw,≥Ûdü).
-next(≥Ûdü,radom).
-next(≥Ûdü,czÍstochowa).
-next(czÍstochowa,kielce).
-next(czÍstochowa,katowice).
-next(katowice,krakÛw).
-next(kielce,krakÛw).
-next(kielce,rzeszÛw).
+next(wroc≈Çaw,≈Ç√≥d≈∫).
+next(≈Ç√≥d≈∫,radom).
+next(≈Ç√≥d≈∫,czƒôstochowa).
+next(czƒôstochowa,kielce).
+next(czƒôstochowa,katowice).
+next(katowice,krak√≥w).
+next(kielce,krak√≥w).
+next(kielce,rzesz√≥w).
 next(lublin,kielce).
-next(lublin,rzeszÛw).
-next(krakÛw,rzeszÛw).
+next(lublin,rzesz√≥w).
+next(krak√≥w,rzesz√≥w).
 
-po≥πczenie(A, B) :- next(A, B).
-po≥πczenie(A, B) :- next(A, C), po≥πczenie(C, B).
+po≈ÇƒÖczenie(A, B) :- next(A, B).
+po≈ÇƒÖczenie(A, B) :- next(A, C), po≈ÇƒÖczenie(C, B).
 
 
 zjazd(X, Y, Z) :-  next(X, Y), Z=X.
@@ -56,25 +56,5 @@ trasa2(X, Y, obok(V, Y)) :- next(W, Y), trasa2(X, W, V).
 
 trasa3(X, Y, [X|[Y|[]]]) :- next(X, Y).
 trasa3(X, Y, [X|[W|V]]) :- next(X, W), trasa3(W, Y, [W|V]).
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
