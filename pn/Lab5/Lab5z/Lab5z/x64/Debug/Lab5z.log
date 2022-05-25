@@ -1,0 +1,9 @@
+﻿  Source.cpp
+C:\Users\Kacper\git\put\pn\Lab5\Lab5z\Lab5z\Source.cpp(105,17): warning C4018: '<=': signed/unsigned mismatch
+C:\Users\Kacper\git\put\pn\Lab5\Lab5z\Lab5z\Source.cpp(107,29): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab5\Lab5z\Lab5z\Source.cpp(570,15): warning C4244: 'initializing': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab5\Lab5z\Lab5z\Source.cpp(577,15): warning C4244: 'initializing': conversion from 'unsigned int' to 'float', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab5\Lab5z\Lab5z\Source.cpp(619,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Kacper\git\put\pn\Lab5\Lab5z\Lab5z\Source.cpp(694,16): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Kacper\git\put\pn\Lab5\Lab5z\Lab5z\Source.cpp(774,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Lab5z.vcxproj -> C:\Users\Kacper\git\put\pn\Lab5\Lab5z\x64\Debug\Lab5z.exe

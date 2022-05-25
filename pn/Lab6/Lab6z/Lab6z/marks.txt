@@ -1,0 +1,5 @@
+4
+124 Kowalski Jan 15.5
+235 Nowak Anna 20.0
+3465 Nowicki Adam 4.0
+3567 Kaczmarek Agnieszka 9.5

@@ -1,0 +1,6 @@
+﻿  Source.cpp
+C:\Users\Kacper\git\put\pn\Lab6\Lab6z\Lab6z\Source.cpp(584,6): warning C4101: 'i': unreferenced local variable
+C:\Users\Kacper\git\put\pn\Lab6\Lab6z\Lab6z\Source.cpp(655,9): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
+C:\Users\Kacper\git\put\pn\Lab6\Lab6z\Lab6z\Source.cpp(655,9): message : consider using '%zd' in the format string
+C:\Users\Kacper\git\put\pn\Lab6\Lab6z\Lab6z\Source.cpp(745,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Lab6z.vcxproj -> C:\Users\Kacper\git\put\pn\Lab6\Lab6z\x64\Debug\Lab6z.exe
