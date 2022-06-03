@@ -743,24 +743,45 @@ void task6()
 	struct listNode* list = NULL;
 	measureTimes(array, list);
 }
+
+int* copyData(int* data)
+{
+	int* data1 = (int*)malloc(300 * sizeof(int));
+	int i;
+	for (i = 0; i < 300; i++)
+	{
+		data1[i] = data[i];
+	}
+	return data1;
+}
 void task7()
 {
 	int i, size = 300;
-	double avgBS = 0;
-	double avgHS = 0;
-	double avgQS = 0;
+	double avgBS = 0.0;
+	double avgHS = 0.0;
+	double avgQS = 0.0;
 	for (i = 0; i < 1000; i++)
 	{
 		int* data = generateNumbers();
-		avgBS += measureTimeOf(data, size, bubbleSort);
-		avgHS += measureTimeOf(data, size, heapSort);
-		avgQS += measureTimeOf(data, size, quickSort);
+		int* dataBS = copyData(data);
+		int* dataHS = copyData(data);
+		int* dataQS = copyData(data);
+		avgBS += measureTimeOf(dataBS, size, bubbleSort);
+		avgHS += measureTimeOf(dataHS, size, heapSort);
+		avgQS += measureTimeOf(dataQS, size, quickSort);
 	}
 	avgBS /= 1000.0;
 	avgHS /= 1000.0;
 	avgQS /= 1000.0;
 	printf("\nBS %f\nHS %f\nQS %f\n", avgBS, avgHS, avgQS);
 }
+
+
+
+
+
+
+
 void task8()
 {
 
