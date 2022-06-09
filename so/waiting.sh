@@ -46,7 +46,6 @@ while true; do
         shift
         ;;
     -f)
-        OUT=1
         OUTFILE="waiting.log"
         shift
         ;;
@@ -116,10 +115,10 @@ while true; do
         if [[ $? -ne 0 ]]; then
             if [[ $OUT -eq 1 ]] || [[ -n "$OUTFILE" ]]; then
                 if [[ -n "$OUTFILE" ]]; then
-                    echo "$url - difference found"
+                    echo "$url - difference found" >> "$OUTFILE"
                 fi
                 if [[ $OUT -eq 1 ]]; then
-                    echo "$url - difference found" >> "$OUTFILE"
+                    echo "$url - difference found"
                 fi
             else
                 $($BROWSER $url &)

@@ -114,11 +114,13 @@ while true; do
     for url in $URLS; do
         DIFF=$(diff ./old/$AM ./new/$AM)
         if [[ $? -ne 0 ]]; then
-            if [[ $OUT -eq 1 ]]; then
+            if [[ $OUT -eq 1 ]] || [[ -n "$OUTFILE" ]]; then
                 if [[ -n "$OUTFILE" ]]; then
                     echo "$url - difference found"
                 fi
-                echo "$url - difference found" >> "$OUTFILE"
+                if [[ $OUT -eq 1 ]]; then
+                    echo "$url - difference found" >> "$OUTFILE"
+                fi
             else
                 $($BROWSER $url &)
             fi
