@@ -1,0 +1,2 @@
+www.abc.pl
+www.xyz.pl
